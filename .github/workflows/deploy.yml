@@ -2,7 +2,7 @@ name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
 env:
   VITE_API_TEST: ${{secrets.VITE_API_TEST}}
 
