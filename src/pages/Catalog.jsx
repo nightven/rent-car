@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import InputPanel from "../components/InputPanel/InputPanel";
+import CardList from "../components/CardList/CardList";
 
 const Catalog = () => {
   return (
-    <div>Catalog</div>
-  )
-}
+    <div>
+      Catalog
+      <InputPanel />
+      <CardList />
+    </div>
+  );
+};
 
-export default Catalog
+export default Catalog;
