@@ -1,6 +1,7 @@
 {
   "name": "rent-car",
   "private": true,
+  "homepage": "https://nightven.github.io/rent-car/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
