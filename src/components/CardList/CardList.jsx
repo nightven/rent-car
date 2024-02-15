@@ -1,5 +1,8 @@
 import React from "react";
-import CardItem from "../CardItem/CardItem";
+import CardItem from "./CardItem/CardItem";
+import { useGetCarsQuery } from "../../redux/advert/advertSlice";
+import Loader from "../Loader/Loader";
+import { StyledUl } from "./CardList.styled";
 const car = {
   id: 9582,
   year: 2008,
@@ -22,12 +25,20 @@ const car = {
 };
 
 const CardList = () => {
+  const { data, isLoading } = useGetCarsQuery();
+
   return (
-    <ul>
-      <li>
-        <CardItem car={car} />
-      </li>
-    </ul>
+    <StyledUl>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        data.map((car) => (
+          <li key={car.id}>
+            <CardItem car={car} />
+          </li>
+        ))
+      )}
+    </StyledUl>
   );
 };
 
