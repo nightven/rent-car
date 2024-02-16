@@ -3,6 +3,7 @@ import Cars from "/white-cars.jpg";
 import { NavLink } from "react-router-dom";
 import { StyledDiv } from "./styles/HomePage.styled";
 
+
 const Home = () => {
   return (
     <section>
@@ -12,7 +13,7 @@ const Home = () => {
             <span>Choose a car </span>
             <span>with Rent Car</span>
           </h1>
-          <video name="media" autoplay="" muted="" loop="" width="100%">
+          <video name="media" autoPlay muted loop width="100%">
             <source
               src="https://ukr-prokat.com/wp-content/themes/webera/images/home-video.mp4"
               type="video/mp4"
