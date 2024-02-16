@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Cars from "/white-cars.jpg";
 import { NavLink } from "react-router-dom";
 import { StyledDiv } from "./styles/HomePage.styled";
