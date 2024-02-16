@@ -288,7 +288,7 @@ to {
       scale: 0.9;
     }
   }
-`,pb=()=>O.jsx("section",{children:O.jsx("div",{className:"container",children:O.jsxs(db,{children:[O.jsxs("h1",{children:[O.jsx("span",{children:"Choose a car "}),O.jsx("span",{children:"with Rent Car"})]}),O.jsx("video",{name:"media",autoplay:"",muted:"",loop:"",width:"100%",children:O.jsx("source",{src:"https://ukr-prokat.com/wp-content/themes/webera/images/home-video.mp4",type:"video/mp4"})}),O.jsx("h2",{children:"Lots of cars for your trips in comfort."}),O.jsx("div",{className:"img-wrapper",children:O.jsx("img",{src:fb,alt:""})}),O.jsx(ks,{to:"/catalog",className:"rent-btn",children:"Rent car now"})]})})}),hb=Ce.div`
+`,pb=()=>O.jsx("section",{children:O.jsx("div",{className:"container",children:O.jsxs(db,{children:[O.jsxs("h1",{children:[O.jsx("span",{children:"Choose a car "}),O.jsx("span",{children:"with Rent Car"})]}),O.jsx("video",{name:"media",autoPlay:!0,muted:!0,loop:!0,width:"100%",children:O.jsx("source",{src:"https://ukr-prokat.com/wp-content/themes/webera/images/home-video.mp4",type:"video/mp4"})}),O.jsx("h2",{children:"Lots of cars for your trips in comfort."}),O.jsx("div",{className:"img-wrapper",children:O.jsx("img",{src:fb,alt:""})}),O.jsx(ks,{to:"/catalog",className:"rent-btn",children:"Rent car now"})]})})}),hb=Ce.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
