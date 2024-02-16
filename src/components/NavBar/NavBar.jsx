@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledNav, StyledUl } from "./NavBar.styled";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -7,13 +8,13 @@ const NavBar = () => {
       <StyledNav>
         <StyledUl>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="catalog">Catalog</a>
+            <NavLink to="catalog">Catalog</NavLink>
           </li>
           <li>
-            <a href="favorites">Favorites</a>
+            <NavLink to="favorites">Favorites</NavLink>
           </li>
         </StyledUl>
       </StyledNav>

@@ -8,11 +8,33 @@ export const StyledDiv = styled.div`
   background: var(--primary-white);
 
   .img-wrapper {
+    position: relative;
     width: 461px;
     height: 248px;
     margin-bottom: 14px;
     border-radius: 14px;
     overflow: hidden;
+  }
+
+  .heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    stroke: var(--primary-white);
+    transition: fill 350ms, stroke 350ms;
+    &:hover,
+    &:focus {
+      fill: var(--primary-blue);
+      stroke: var(--primary-blue);
+    }
+    &.favored {
+      fill: var(--primary-blue);
+      stroke: var(--primary-blue);
+      &:hover,
+      &:focus {
+        stroke: var(--primary-white);
+      }
+    }
   }
 
   h2 {
@@ -82,6 +104,7 @@ export const StyledDiv = styled.div`
     color: var(--primary-white);
     background: var(--header-gradient);
     box-shadow: var(--btn-box-shadow);
+    transition: color 350ms, scale 350ms, box-shadow 350ms;
     &:hover,
     &:focus {
       color: var(--primary-blue);
@@ -89,6 +112,4 @@ export const StyledDiv = styled.div`
       box-shadow: var(--btn-box-shadow-hover);
     }
   }
-
- 
 `;

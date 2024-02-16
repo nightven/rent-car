@@ -8,4 +8,10 @@ export const StyledDiv = styled.div`
   border-bottom-right-radius: 12px 12px;
   background: var(--header-gradient);
   box-shadow: var(--btn-box-shadow);
+  a {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
 `;

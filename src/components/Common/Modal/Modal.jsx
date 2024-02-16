@@ -27,7 +27,7 @@ const Modal = ({ children, onCloseModal }) => {
   return createPortal(
     <Overlay className="overlay" onClick={closeModal}>
       <div className="modal">
-        <button className="close-btn" onClick={() => onCloseModal}>
+        <button className="close-btn" onClick={onCloseModal}>
           <Close />
         </button>
         {children}

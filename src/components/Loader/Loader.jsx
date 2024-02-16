@@ -1,5 +1,5 @@
-import React from 'react'
-import { Hourglass } from 'react-loader-spinner';
+import React from "react";
+import { Hourglass } from "react-loader-spinner";
 
 const Loader = () => {
   return (
@@ -8,11 +8,11 @@ const Loader = () => {
       height="80"
       width="80"
       ariaLabel="hourglass-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
+      wrapperStyle={{ position: "absolute", bottom: "47%", left: "47%" }}
+      wrapperClass={{}}
       colors={["#306cce", "#72a1ed"]}
     />
   );
-}
+};
 
-export default Loader
+export default Loader;

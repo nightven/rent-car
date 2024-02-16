@@ -13,15 +13,17 @@ const StyledButton = styled.button`
   font-size: "14px";
   font-weight: 600;
   border-radius: 12px;
-  background: ${(props) => props.background || "var(--header-gradient)"};
+  background: ${(props) => props.$background || "var(--header-gradient)"};
   color: ${(props) => props.color || "var(--active-blue)"};
   box-shadow: ${(props) => props.shadow || ""};
+  transition: scale 350ms, background 350ms, box-shadow 350ms, color 350ms;
   &:hover,
   &:focus {
     scale: 0.9;
     background: ${(props) => props.hover || "var(--header-gradient)"};
     box-shadow: var(--btn-box-shadow-hover);
     color: var(--primary-white);
+    cursor: pointer;
   }
 `;
 const Button = ({
@@ -38,7 +40,7 @@ const Button = ({
     <StyledButton
       width={width}
       height={height}
-      background={background}
+      $background={background}
       color={color}
       shadow={bShadow}
       hover={bgHover}

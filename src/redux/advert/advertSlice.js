@@ -34,7 +34,7 @@ export const carsApi = createApi({
   endpoints(builder) {
     return {
       getCars: builder.query({
-        query: () => ({ url: "/adverts?page=1&limit=12", method: "get" }),
+        query: (page) => ({ url: `/adverts?page=${page}&limit=12`, method: "get" }),
       }),
     };
   },

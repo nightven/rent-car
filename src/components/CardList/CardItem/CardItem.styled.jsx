@@ -31,10 +31,25 @@ export const StyledDiv = styled.div`
   }
   .heart {
     position: absolute;
-    fill: white;
     top: 14px;
     right: 14px;
+    stroke: var(--primary-white);
+    transition: fill 350ms, stroke 350ms;
+    &:hover,
+    &:focus {
+      fill: var(--primary-blue);
+      stroke: var(--primary-blue);
+    }
+    &.favored {
+      fill: var(--primary-blue);
+      stroke: var(--primary-blue);
+      &:hover,
+      &:focus {
+        stroke: var(--primary-white);
+      }
+    }
   }
+
   .title-wrapper {
     display: flex;
     justify-content: space-between;
