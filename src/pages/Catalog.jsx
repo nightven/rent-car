@@ -35,27 +35,32 @@ const Catalog = () => {
 
   useEffect(() => {
     if (responseData) {
-      if (query.make || query.price) {
-        console.log("search");
-        setData([]);
-        setData(responseData);
-      } else {
-        console.log(data);
-        setData((prevData) => [...prevData, ...responseData]);
-      }
       if (responseData.length === 0 || responseData.length < 12) {
         setIsDisabled(true);
       } else {
         setIsDisabled(false);
       }
+      if (query.make || query.price) {
+          console.log("query",data);
+        setData([]);
+        setData(responseData);
+      } else {
+        console.log("before", data);
+        setData((prevData) => [...prevData, ...responseData]);
+        console.log("after",data);
+      }
     }
-  }, [responseData, isDisabled]);
+  }, [responseData]);
 
   useEffect(() => {
     if (!query.make || !query.price) {
       setData([]);
     }
   }, [query.make, query.price]);
+
+   useEffect(() => {
+     setData([]); 
+   }, []);
 
   const handleButtonClick = () => {
     setPage((prev) => (prev += 1));
