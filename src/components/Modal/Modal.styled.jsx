@@ -21,9 +21,17 @@ export const Overlay = styled.div`
     position: absolute;
     top: 16px;
     right: 16px;
-    transition: rotate 350ms; 
-    &:hover, &:focus{
+    transition: rotate 350ms;
+    &:hover,
+    &:focus {
       rotate: 120deg;
     }
+  }
+  .modal-content {
+    overflow-y: auto; 
+    max-height: calc(
+      100vh - 48px
+    ); 
+  
   }
 `;

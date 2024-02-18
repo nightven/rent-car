@@ -1,9 +1,10 @@
-import React from "react";
-import { StyledDiv } from "./InputPanel.styled";
+import React, { useState } from "react";
 import Select from "react-select";
 import Button from "../Common/Buttons/Button";
+import { StyledForm } from "./InputPanel.styled";
 
 const carMake = [
+  { value: "All", label: "All" },
   { value: "Buick", label: "Buick" },
   { value: "Volvo", label: "Volvo" },
   { value: "HUMMER", label: "HUMMER" },
@@ -26,8 +27,7 @@ const carMake = [
   { value: "land", label: "Land" },
 ];
 const carPrice = [
-  { value: "10", label: "10" },
-  { value: "20", label: "20" },
+  { value: "", label: "To $" },
   { value: "30", label: "30" },
   { value: "40", label: "40" },
   { value: "50", label: "50" },
@@ -49,23 +49,60 @@ const carPrice = [
   { value: "300", label: "300" },
   { value: "400", label: "400" },
   { value: "500", label: "500" },
-  { value: "1000", label: "1000" },
-  { value: "1200", label: "1200" },
-  { value: "1500", label: "1500" },
+  { value: "600", label: "600" },
 ];
 
-const InputPanel = () => {
-  return (
-    <StyledDiv>
-      <Select options={carMake} />
-      <Select options={carPrice} />
-      <div>
-        <input type="number" placeholder="From" />
-        <input type="number" placeholder="To" />
-      </div>
+const customStyles = {
+  control: (provided) => ({
+    ...provided,
+    backgroundColor: "#f9f9f9",
+    borderRadius: "5px",
+    border: "2px solid #ddd",
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isSelected ? "#407bff" : "#fff",
+    color: state.isSelected ? "#fff" : "#000",
+  }),
+};
 
-      <Button width={'136px'} height={"48px"} text={"Search" } />
-    </StyledDiv>
+const InputPanel = ({ setQuery }) => {
+  const [make, setMake] = useState("");
+  const [price, setPrice] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setQuery({ make, price });
+  };
+  const onChange = (selectedOption, name) => {
+    if (name === "make") {
+      if (selectedOption.value === "All") {
+        setMake("");
+      } else setMake(selectedOption.value);
+    } else if (name === "price") {
+      setPrice(selectedOption.value);
+    }
+  };
+  return (
+    <StyledForm onSubmit={onSubmit}>
+      <label>
+        <Select
+          options={carMake}
+          placeholder="Enter the text"
+          onChange={(selectedOption) => onChange(selectedOption, "make")}
+          styles={customStyles}
+        />
+      </label>
+      <label>
+        <Select
+          options={carPrice}
+          placeholder="To $"
+          onChange={(selectedOption) => onChange(selectedOption, "price")}
+          styles={customStyles}
+        />
+      </label>
+      <Button width={"136px"} height={"48px"} text={"Search"} type="submit" />
+    </StyledForm>
   );
 };
 

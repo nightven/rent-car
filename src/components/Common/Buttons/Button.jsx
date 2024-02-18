@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   flex-shrink: 0;
   font-size: "14px";
   font-weight: 600;
+  border: 1px solid #b0cce3;
   border-radius: 12px;
   background: ${(props) => props.$background || "var(--header-gradient)"};
   color: ${(props) => props.color || "var(--active-blue)"};

@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import axios from "axios";
 
-const BASE_URL = "https://65cc1402dd519126b83e0478.mockapi.io/api/v1"
+const BASE_URL = "https://65cc1402dd519126b83e0478.mockapi.io/api/v1";
 const axiosBaseQuery =
   ({ baseUrl } = { baseUrl: "" }) =>
   async ({ url, method, data, params, headers }) => {
@@ -26,7 +26,7 @@ const axiosBaseQuery =
   };
 
 export const carsApi = createApi({
-  reducerPath: "contacts",
+  reducerPath: "cars",
   baseQuery: axiosBaseQuery({
     baseUrl: BASE_URL,
   }),
@@ -34,13 +34,15 @@ export const carsApi = createApi({
   endpoints(builder) {
     return {
       getCars: builder.query({
-        query: (page) => ({ url: `/adverts?page=${page}&limit=12`, method: "get" }),
+        query: (params) => ({
+          url: `/adverts`,  
+          method: "get",
+          params
+        }),
       }),
     };
   },
 });
 
-
-export const {
-  useGetCarsQuery,
-} = carsApi;
+export const { useGetCarsQuery } = carsApi;
+console.log(carsApi);

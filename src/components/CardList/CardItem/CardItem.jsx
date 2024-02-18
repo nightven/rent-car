@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { StyledDiv } from "./CardItem.styled";
 import Button from "../../Common/Buttons/Button";
-import Modal from "../../Common/Modal/Modal";
-import ModalCard from "../../Common/Modal/modalCard/ModalCard";
 import { setToLocal } from "../../../heplers/localStoreage";
 import { splitAddress, splitFunctional } from "../../../heplers/split";
+import Modal from "../../Modal/Modal";
+import ModalCard from "../../Modal/modalCard/ModalCard";
 
 const CardItem = ({ car, favorite, setFavorite }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -31,7 +31,12 @@ const CardItem = ({ car, favorite, setFavorite }) => {
 
   const onCloseModal = () => {
     setModalIsOpen(false);
+      document.body.style.overflow = "auto";
   };
+  const openModal = () => {
+    setModalIsOpen(true)
+     document.body.style.overflow = "hidden";
+   }
 
   return (
     <>
@@ -96,16 +101,12 @@ const CardItem = ({ car, favorite, setFavorite }) => {
           height={"44px"}
           shadow={"var(--btn-box-shadow)"}
           hover={"var(--active-blue)"}
-          onClick={() => setModalIsOpen(true)}
+          onClick={openModal}
         />
       </StyledDiv>
       {modalIsOpen && (
         <Modal onCloseModal={onCloseModal}>
-          <ModalCard
-            car={car}
-            favorite={favorite}
-            handleClick={handleClick}
-          />
+          <ModalCard car={car} favorite={favorite} handleClick={handleClick} />
         </Modal>
       )}
     </>

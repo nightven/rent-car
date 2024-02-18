@@ -2,7 +2,7 @@ const modalRoot = document.querySelector("#modal-root");
 import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Overlay } from "./Modal.styled";
-import Close from "../Icons/Close";
+import Close from "../Common/Icons/Close";
 
 const Modal = ({ children, onCloseModal }) => {
   useEffect(() => {
@@ -30,7 +30,7 @@ const Modal = ({ children, onCloseModal }) => {
         <button className="close-btn" onClick={onCloseModal}>
           <Close />
         </button>
-        {children}
+        <div className="modal-content">{children}</div>
       </div>
     </Overlay>,
     modalRoot

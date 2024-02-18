@@ -5,7 +5,13 @@ export const StyledDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 426px;
+  height: 436px;
+  @media screen and (min-width: 768px) {
+    height: 416px;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 436px;
+  }
 
   .img-warpper {
     position: relative;
@@ -34,18 +40,21 @@ export const StyledDiv = styled.div`
     top: 14px;
     right: 14px;
     stroke: var(--primary-white);
-    transition: fill 350ms, stroke 350ms;
+    transition: fill 350ms, stroke 350ms, transform 350ms;
     &:hover,
     &:focus {
       fill: var(--primary-blue);
       stroke: var(--primary-blue);
+      transform: scale(1.2);
     }
     &.favored {
       fill: var(--primary-blue);
       stroke: var(--primary-blue);
+      transition: stroke 350ms, transform 350ms;
       &:hover,
       &:focus {
         stroke: var(--primary-white);
+        transform: scale(1.2);
       }
     }
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledDiv } from "./ModalCard.styled";
 
-import { splitAddress } from "../../../../heplers/split";
+import { splitAddress } from "../../../heplers/split";
 
 const ModalCard = ({ car, favorite, handleClick }) => {
   const functional = [...car.accessories, ...car.functionalities];
@@ -11,7 +11,6 @@ const ModalCard = ({ car, favorite, handleClick }) => {
   const isFavorite = favorite.some((localCar) => localCar.id === car.id);
 
   const mileage = car.mileage.toString().split("");
-
 
   return (
     <StyledDiv>
@@ -40,49 +39,50 @@ const ModalCard = ({ car, favorite, handleClick }) => {
         <span>{car.year}</span>
       </h2>
       <div className="short-info">
-        <div>
-          <span>{splitedAddress[splitedAddress.length - 2]}</span>
-          <span className="verticalLine"></span>
-          <span>{splitedAddress[splitedAddress.length - 1]}</span>
-          <span className="verticalLine"></span>
-          <span>id: {car.id}</span>
-          <span className="verticalLine"></span>
-          <span>Type: {car.type}</span>
-        </div>
-        <div>
-          <span>Fuel Consumption: {car.fuelConsumption}</span>
-          <span className="verticalLine"></span>
-          <span>Engine Size: {car.engineSize}</span>
-        </div>
+        <ul>
+          <li>{splitedAddress[splitedAddress.length - 2]}</li>
+          <li>{splitedAddress[splitedAddress.length - 1]}</li>
+          <li>id: {car.id}</li>
+          <li>Type: {car.type}</li>
+        </ul>
+        <ul>
+          <li>Fuel Consumption: {car.fuelConsumption}</li>
+
+          <li>Engine Size: {car.engineSize}</li>
+        </ul>
       </div>
       <p className="descriptions">{car.description}</p>
       <div className="accessories">
         <h3>Accessories and functionalities:</h3>
         <ul>
-          {functional.map((item, index) => {
-            return (
-              <li key={index}>
-                {index < functional.length - 1 && (
-                  <span className="verticalLine"></span>
-                )}
-                <span>{item}</span>
-              </li>
-            );
+          {car.accessories.map((item, index) => {
+            return <li key={index}>{item}</li>;
+          })}
+        </ul>
+        <ul>
+          {car.functionalities.map((item, index) => {
+            return <li key={index}>{item}</li>;
           })}
         </ul>
       </div>
       <h3>Rental Conditions:</h3>
-      <div className="conditions">
-        <p>
-          Minimum age: <span className="age">25</span>
-        </p>
-        <p>Valid driver’s license</p>
-        <p>Security deposite required</p>
-        <p>
-          Mileage: {mileage.splice(0, 1)},{mileage.join("")}
-        </p>
-        <p>Price: {car.rentalPrice}</p>
-      </div>
+      <ul className="conditions">
+        <li>
+          Minimum age:
+          <span className="age">{car.rentalConditions.match(/\d+/)?.[0]}</span>
+        </li>
+        <li>Valid driver’s license</li>
+        <li>Security deposite required</li>
+        <li>
+          Mileage:{" "}
+          <span>
+            {mileage.splice(0, 1)},{mileage.join("")}
+          </span>
+        </li>
+        <li>
+          Price: <span>{car.rentalPrice}</span>
+        </li>
+      </ul>
       <a className="rent" href="tel:+380730000000">
         Rental car
       </a>

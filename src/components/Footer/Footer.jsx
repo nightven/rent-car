@@ -3,16 +3,20 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 14px;
   margin: 20px 0 20px 0;
+  @media screen and (min-width: 768px){
+    flex-direction: row;
+  }
 
   p {
     color: var(--primary-black);
     font-size: 24px;
   }
-  button {
+  a {
     color: var(--primary-blue);
     font-size: 24px;
     font-weight: 500;
@@ -34,7 +38,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <StyledDiv>
-          <p>Copyright &copy; Created by </p> <button>Vitalii Beiar</button>
+          <p>Copyright &copy; Created by </p> <a href="mailto:vitaliy.beyar@gmail.com">Vitalii Beiar</a>
         </StyledDiv>
       </div>
     </footer>

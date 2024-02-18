@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledDiv = styled.div`
   width: 541px;
-  height: 752px;
   padding: 50px 40px;
   border-radius: 24px;
   background: var(--primary-white);
@@ -49,17 +48,31 @@ export const StyledDiv = styled.div`
   .model {
     color: var(--primary-blue);
   }
-  .verticalLine {
-    width: 0.5px;
-    height: 16px;
-    background-color: var(--line-gray);
-  }
 
   .short-info {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     margin-bottom: 14px;
+    ul {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      li {
+        position: relative;
+        padding-right: 6px;
+        &:not(:last-child):after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 1px;
+          background-color: var(--line-gray);
+        }
+      }
+    }
   }
 
   .descriptions {
@@ -78,18 +91,44 @@ export const StyledDiv = styled.div`
   }
   .accessories {
     margin-bottom: 24px;
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    ul {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      li {
+        position: relative;
+        padding-right: 6px;
+        &:not(:last-child):after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 1px;
+          background-color: var(--line-gray);
+        }
+      }
+    }
   }
 
   .conditions {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 24px;
+    gap: 8px;
+    li {
+      display: flex;
+      padding: 7px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 35px;
+      background: #f9f9f9;
+      span{
+        color: var(--primary-blue);
+      }
+    }
   }
 
   .rent {
