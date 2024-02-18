@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import InputPanel from "../components/InputPanel/InputPanel";
+
 import CardList from "../components/CardList/CardList";
 import Button from "../components/Common/Buttons/Button";
 import { useGetCarsQuery } from "../redux/advert/advertSlice";
 import Loader from "../components/Loader/Loader";
 import NotFound from "../components/Common/NotFound/NotFound";
+import SearchPanel from "../components/SearchPanel/SearchPanel";
 
 const Catalog = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
+
 
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("cars")) ?? []
@@ -30,7 +33,7 @@ const Catalog = () => {
       refetchOnMountOrArgChange: true,
     }
   );
-  console.log(isLoading);
+
 
   useEffect(() => {
     if (responseData) {
@@ -39,6 +42,11 @@ const Catalog = () => {
         setData(responseData);
       } else {
         setData((prevData) => [...prevData, ...responseData]);
+      }
+      if (responseData.length === 0 || responseData.length < 12) {
+        setIsDisabled(true);
+      } else {
+        setIsDisabled(false);
       }
     }
   }, [responseData]);
@@ -55,7 +63,7 @@ const Catalog = () => {
 
   return (
     <div className="container">
-      <InputPanel setQuery={setQuery} />
+      <SearchPanel setQuery={setQuery} />
       {isLoading ? (
         <Loader />
       ) : isError ? (
@@ -71,6 +79,7 @@ const Catalog = () => {
           background={"white"}
           color={"var(--active-blue)"}
           onClick={handleButtonClick}
+          disabled={isDisabled}
         />
       )}
     </div>

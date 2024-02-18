@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  display: flex;
+  display: ${(props)=> (props.disabled? "none": "flex")};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "44px"};
   padding: 12px 12px;
@@ -12,7 +12,8 @@ const StyledButton = styled.button`
   flex-shrink: 0;
   font-size: "14px";
   font-weight: 600;
-  border: 1px solid #b0cce3;
+
+  border: 1px solid "#b0cce3";
   border-radius: 12px;
   background: ${(props) => props.$background || "var(--header-gradient)"};
   color: ${(props) => props.color || "var(--active-blue)"};
@@ -35,7 +36,8 @@ const Button = ({
   color,
   bShadow,
   bgHover,
-  onClick
+  onClick,
+  disabled
 }) => {
   return (
     <StyledButton
@@ -46,6 +48,7 @@ const Button = ({
       shadow={bShadow}
       hover={bgHover}
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
     </StyledButton>
