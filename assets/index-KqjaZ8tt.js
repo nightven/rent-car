@@ -217,7 +217,7 @@ to {
   overflow: hidden;
 
   video {
-    height: 160px;
+    height: 210px;
     box-shadow: var(--btn-box-shadow);
 
     @media screen and (min-width: 768px) {
@@ -233,7 +233,7 @@ to {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 10px;
+    top: 20px;
 
     font-size: 34px;
     font-weight: 600;
@@ -281,7 +281,7 @@ to {
 
   a {
     position: absolute;
-    top: 112px;
+    top: 135px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -520,47 +520,70 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   .modal {
     position: relative;
-    max-width: calc(100vw - 48px);
-    max-height: calc(100vh - 24px);
+    max-width: 90%;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      max-width: calc(100vw - 48px);
+      max-height: calc(100vh - 24px);
+    }
   }
   .close-btn {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 25px;
     transition: rotate 350ms;
     &:hover,
     &:focus {
       rotate: 120deg;
+      cursor: pointer;
+    }
+    @media screen and (min-width: 768px) {
+      top: 16px;
+      right: 16px;
     }
   }
   .modal-content {
-    overflow-y: auto; 
-    max-height: calc(
-      100vh - 48px
-    ); 
-  
+    max-width: 400px;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 48px);
+    @media screen and (min-width: 768px) {
+      max-width: 541px;
+    }
   }
 `;var p1={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},jc=Pe.createContext&&Pe.createContext(p1),g3=["attr","size","title"];function y3(e,t){if(e==null)return{};var n=w3(e,t),r,i;if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);for(i=0;i<o.length;i++)r=o[i],!(t.indexOf(r)>=0)&&Object.prototype.propertyIsEnumerable.call(e,r)&&(n[r]=e[r])}return n}function w3(e,t){if(e==null)return{};var n={},r=Object.keys(e),i,o;for(o=0;o<r.length;o++)i=r[o],!(t.indexOf(i)>=0)&&(n[i]=e[i]);return n}function Ea(){return Ea=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},Ea.apply(this,arguments)}function Fh(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(i){return Object.getOwnPropertyDescriptor(e,i).enumerable})),n.push.apply(n,r)}return n}function ka(e){for(var t=1;t<arguments.length;t++){var n=arguments[t]!=null?arguments[t]:{};t%2?Fh(Object(n),!0).forEach(function(r){S3(e,r,n[r])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Fh(Object(n)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(n,r))})}return e}function S3(e,t,n){return t=x3(t),t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function x3(e){var t=b3(e,"string");return typeof t=="symbol"?t:String(t)}function b3(e,t){if(typeof e!="object"||e===null)return e;var n=e[Symbol.toPrimitive];if(n!==void 0){var r=n.call(e,t||"default");if(typeof r!="object")return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return(t==="string"?String:Number)(e)}function h1(e){return e&&e.map((t,n)=>Pe.createElement(t.tag,ka({key:n},t.attr),h1(t.child)))}function C3(e){return t=>Pe.createElement(E3,Ea({attr:ka({},e.attr)},t),h1(e.child))}function E3(e){var t=n=>{var{attr:r,size:i,title:o}=e,s=y3(e,g3),l=i||n.size||"1em",a;return n.className&&(a=n.className),e.className&&(a=(a?a+" ":"")+e.className),Pe.createElement("svg",Ea({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},n.attr,r,s,{className:a,style:ka(ka({color:e.color||n.color},n.style),e.style),height:l,width:l,xmlns:"http://www.w3.org/2000/svg"}),o&&Pe.createElement("title",null,o),e.children)};return jc!==void 0?Pe.createElement(jc.Consumer,null,n=>t(n)):t(p1)}function k3(e){return C3({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{fill:"none",d:"M0 0h24v24H0V0z"},child:[]},{tag:"path",attr:{d:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"},child:[]}]})(e)}const O3=()=>O.jsx(O.Fragment,{children:O.jsx(jc.Provider,{value:{color:"grey",size:"2em"},children:O.jsx(k3,{})})}),P3=document.querySelector("#modal-root"),R3=({children:e,onCloseModal:t})=>{k.useEffect(()=>{const r=i=>{i.code==="Escape"&&t()};return window.addEventListener("keydown",r),()=>{window.removeEventListener("keydown",r)}},[t]);const n=r=>{r.currentTarget===r.target&&t()};return qf.createPortal(O.jsx(v3,{className:"overlay",onClick:n,children:O.jsxs("div",{className:"modal",children:[O.jsx("button",{className:"close-btn",onClick:t,children:O.jsx(O3,{})}),O.jsx("div",{className:"modal-content",children:e})]})}),P3)},_3=xe.div`
-  width: 541px;
-  padding: 50px 40px;
-  border-radius: 24px;
+  width: 95%;
+  padding: 35px 15px;
+  border-radius: 14px;
   background: var(--primary-white);
+  @media screen and (min-width: 768px) {
+    width: 541px;
+    padding: 50px 40px;
+    border-radius: 24px;
+  }
 
   .img-wrapper {
     position: relative;
-    width: 461px;
-    height: 248px;
-    margin-bottom: 14px;
     border-radius: 14px;
     overflow: hidden;
+    @media screen and (min-width: 768px) {
+      width: 461px;
+      height: 248px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+    }
   }
 
   .heart {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 18px;
+    right: 18px;
     stroke: var(--primary-white);
     transition: fill 350ms, stroke 350ms;
+    @media screen and (min-width: 768px) {
+      top: 14px;
+      right: 14px;
+    }
     &:hover,
     &:focus {
       fill: var(--primary-blue);
@@ -665,7 +688,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       gap: 8px;
       border-radius: 35px;
       background: #f9f9f9;
-      span{
+      span {
         color: var(--primary-blue);
       }
     }
@@ -675,7 +698,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     display: flex;
     width: 168px;
     height: 44px;
-    margin: 0 auto;
     padding: 12px 50px;
     justify-content: center;
     align-items: center;
@@ -684,6 +706,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     background: var(--header-gradient);
     box-shadow: var(--btn-box-shadow);
     transition: color 350ms, scale 350ms, box-shadow 350ms;
+    @media screen and (min-width: 768px) {
+      margin-right: auto;
+    }
     &:hover,
     &:focus {
       color: var(--primary-blue);
@@ -726,7 +751,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   align-items: center;
   gap: 0px;
   margin-top: 40px;
-  height: 150px;
+  height: 175px;
   padding-top: 2px;
 
   border-radius: 14px;
@@ -884,8 +909,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   padding-right: 15px;
   margin: 0 auto; 
   
-  @media screen and (min-width: 375px) {
-        max-width: 320px;
+  @media screen and (min-width: 420px) {
+        max-width: 400px;
         };
   
   @media screen and (min-width: 768px) {
