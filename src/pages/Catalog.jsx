@@ -13,7 +13,6 @@ const Catalog = () => {
   const [query, setQuery] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
 
-
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("cars")) ?? []
   );
@@ -34,13 +33,14 @@ const Catalog = () => {
     }
   );
 
-
   useEffect(() => {
     if (responseData) {
       if (query.make || query.price) {
+        console.log("search");
         setData([]);
         setData(responseData);
       } else {
+        console.log(data);
         setData((prevData) => [...prevData, ...responseData]);
       }
       if (responseData.length === 0 || responseData.length < 12) {
@@ -49,7 +49,7 @@ const Catalog = () => {
         setIsDisabled(false);
       }
     }
-  }, [responseData]);
+  }, [responseData, isDisabled]);
 
   useEffect(() => {
     if (!query.make || !query.price) {

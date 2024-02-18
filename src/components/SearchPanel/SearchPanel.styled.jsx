@@ -65,7 +65,7 @@ export const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    width: "100%", // Змінено з "224px" на "100%"
+    width: "100%", 
     height: "40px",
     borderColor: state.isSelected ? "#F7F7FB" : "#fff",
     backgroundColor: "#F7F7FB",

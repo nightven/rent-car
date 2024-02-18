@@ -39,10 +39,10 @@ export const carsApi = createApi({
           method: "get",
           params
         }),
+        keepUnusedDataFor: false,
       }),
     };
   },
 });
 
 export const { useGetCarsQuery } = carsApi;
-console.log(carsApi);
