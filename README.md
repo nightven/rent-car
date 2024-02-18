@@ -47,7 +47,7 @@ npm run dev
 На сайті є можливість обрати авто для аренди, знайшовши в каталожі, чи використвуючи сортування. Також є можливісь додати авто до фейворіт
 
 # Розробник
-
+Vitalii Beiar
  [![GitHub](https://www.vectorlogo.zone/logos/github/github-icon.svg)](https://github.com/nightven) [![LinkedIn](https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg)](https://www.linkedin.com/in/vitaliybeyar/) 
 
 ## Ліцензія
