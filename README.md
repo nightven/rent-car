@@ -48,7 +48,7 @@ npm run dev
 
 # Розробник
 
-(https://github.com/nightven) [![GitHub](https://www.vectorlogo.zone/logos/github/github-icon.svg)](https://github.com/nightven) [![LinkedIn](https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg)](https://www.linkedin.com/in/vitaliybeyar/) 
+ [![GitHub](https://www.vectorlogo.zone/logos/github/github-icon.svg)](https://github.com/nightven) [![LinkedIn](https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg)](https://www.linkedin.com/in/vitaliybeyar/) 
 
 ## Ліцензія
 
