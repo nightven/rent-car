@@ -11,7 +11,7 @@ export const StyledDiv = styled.div`
   overflow: hidden;
 
   video {
-    height: 160px;
+    height: 210px;
     box-shadow: var(--btn-box-shadow);
 
     @media screen and (min-width: 768px) {
@@ -27,7 +27,7 @@ export const StyledDiv = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 10px;
+    top: 20px;
 
     font-size: 34px;
     font-weight: 600;
@@ -75,7 +75,7 @@ export const StyledDiv = styled.div`
 
   a {
     position: absolute;
-    top: 112px;
+    top: 135px;
     display: flex;
     justify-content: center;
     align-items: center;

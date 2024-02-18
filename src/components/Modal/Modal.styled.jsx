@@ -14,24 +14,35 @@ export const Overlay = styled.div`
 
   .modal {
     position: relative;
-    max-width: calc(100vw - 48px);
-    max-height: calc(100vh - 24px);
+    max-width: 90%;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      max-width: calc(100vw - 48px);
+      max-height: calc(100vh - 24px);
+    }
   }
   .close-btn {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 25px;
     transition: rotate 350ms;
     &:hover,
     &:focus {
       rotate: 120deg;
+      cursor: pointer;
+    }
+    @media screen and (min-width: 768px) {
+      top: 16px;
+      right: 16px;
     }
   }
   .modal-content {
-    overflow-y: auto; 
-    max-height: calc(
-      100vh - 48px
-    ); 
-  
+    max-width: 400px;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 48px);
+    @media screen and (min-width: 768px) {
+      max-width: 541px;
+    }
   }
 `;

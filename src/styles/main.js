@@ -128,8 +128,8 @@ export const GlobalStyle = createGlobalStyle`
   padding-right: 15px;
   margin: 0 auto; 
   
-  @media screen and (min-width: 375px) {
-        max-width: 320px;
+  @media screen and (min-width: 420px) {
+        max-width: 400px;
         };
   
   @media screen and (min-width: 768px) {

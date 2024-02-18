@@ -1,26 +1,38 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  width: 541px;
-  padding: 50px 40px;
-  border-radius: 24px;
+  width: 95%;
+  padding: 35px 15px;
+  border-radius: 14px;
   background: var(--primary-white);
+  @media screen and (min-width: 768px) {
+    width: 541px;
+    padding: 50px 40px;
+    border-radius: 24px;
+  }
 
   .img-wrapper {
     position: relative;
-    width: 461px;
-    height: 248px;
-    margin-bottom: 14px;
     border-radius: 14px;
     overflow: hidden;
+    @media screen and (min-width: 768px) {
+      width: 461px;
+      height: 248px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+    }
   }
 
   .heart {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 18px;
+    right: 18px;
     stroke: var(--primary-white);
     transition: fill 350ms, stroke 350ms;
+    @media screen and (min-width: 768px) {
+      top: 14px;
+      right: 14px;
+    }
     &:hover,
     &:focus {
       fill: var(--primary-blue);
@@ -125,7 +137,7 @@ export const StyledDiv = styled.div`
       gap: 8px;
       border-radius: 35px;
       background: #f9f9f9;
-      span{
+      span {
         color: var(--primary-blue);
       }
     }
@@ -135,7 +147,6 @@ export const StyledDiv = styled.div`
     display: flex;
     width: 168px;
     height: 44px;
-    margin: 0 auto;
     padding: 12px 50px;
     justify-content: center;
     align-items: center;
@@ -144,6 +155,9 @@ export const StyledDiv = styled.div`
     background: var(--header-gradient);
     box-shadow: var(--btn-box-shadow);
     transition: color 350ms, scale 350ms, box-shadow 350ms;
+    @media screen and (min-width: 768px) {
+      margin-right: auto;
+    }
     &:hover,
     &:focus {
       color: var(--primary-blue);

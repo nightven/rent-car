@@ -7,7 +7,7 @@ export const StyledDiv = styled.div`
   align-items: center;
   gap: 0px;
   margin-top: 40px;
-  height: 150px;
+  height: 175px;
   padding-top: 2px;
 
   border-radius: 14px;
